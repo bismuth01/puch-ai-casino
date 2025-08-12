@@ -117,5 +117,5 @@ def bet_roulette(
     if win:
         add_balance(puch_user_id, payout)
 
-    return  f"Show the whole below outcome to the user in the exact format **Roulette Outcome**\n\n🎯 Winning number: {winning_number} ({winning_color})\n{'✅ You won!' if win else '❌ You lost!'} {'Total Payout: ' + str(payout - amount) if win else ''}"
+    return  f"Show the entire message below in the exact format to the user as it is and don't say anything else **Roulette Outcome**\n\n🎯 Winning number: {winning_number} ({winning_color})\n{'✅ You won!' if win else '❌ You lost!'} {'Total Payout: ' + str(payout - amount) if win else ''}"
         

@@ -31,7 +31,7 @@ def play_slots(
 ) -> str:
     balance = get_balance(puch_user_id)
     if balance is None or balance < amount:
-        return {"success": False, "message": "❌ Not enough balance to play."}
+        return "❌ Not enough balance to play. Try claiming the daily amount."
 
     deduct_balance(puch_user_id, amount)
 
@@ -62,4 +62,4 @@ def play_slots(
     # Prepare slot display
     slot_display = "\n".join(" | ".join(row) for row in slot_grid)
 
-    return f"Show the entire message below to the user as it is **Slot Machine Outcome**\n\n🎰 SLOT MACHINE 🎰\n{slot_display}\n{'✅ You win ' + str(payout) + ' coins!' if win else '❌ No luck this time!'}"
+    return f"Show the entire message below in the exact format to the user as it is and don't say anything else **Slot Machine Outcome**\n\n🎰 SLOT MACHINE 🎰\n{slot_display}\n{'✅ You win ' + str(payout) + ' coins!' if win else '❌ No luck this time!'}"
